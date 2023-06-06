@@ -1,5 +1,5 @@
+from supabase import create_client
 from flask import Flask, render_template, request
-from flask_cors import CORS
 from supabase import create_client
 import pandas as pd
 import numpy as np
@@ -15,7 +15,6 @@ import os
 srt=''
 
 app = Flask(__name__)
-CORS(app)
 app.config['SECRET_KEY']='My super secret key'
 url = "https://mjwonzcuwgpgaruqzrkw.supabase.co"
 key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1qd29uemN1d2dwZ2FydXF6cmt3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODAzNDUyNTcsImV4cCI6MTk5NTkyMTI1N30.Ty31n59HklfH-eSMZSzlCw5hEk4yGoUEmI1ZgteUBCo"
