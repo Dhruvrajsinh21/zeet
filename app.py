@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from Flask import Flask, render_template, request
 from supabase import create_client
 import pandas as pd
 import numpy as np
