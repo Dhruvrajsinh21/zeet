@@ -62,7 +62,8 @@ def jawab():
                     v = request.form['query']
                     v.splitlines()
                     query = srt.join(v)
-                    new = query.replace(" ", "")
+                    o = " ".join(line.strip() for line in query)
+                    new = o.replace(" ", "")
                     new_string = new.translate(str.maketrans('', '', string.punctuation))
                     if f.filename.split(".")[-1] == 'jpg' or f.filename.split(".")[-1] == 'jpeg' or f.filename.split(".")[-1] == 'png':
                         resp=supabase.storage.from_("data").upload('name-{}'.format(new_string),upload_path,{"content-type":"image/jpeg"})
